@@ -1,2 +1,0 @@
-# RosaA
-Rosa para Aremy.
