@@ -24,7 +24,6 @@
   50%    { opacity:var(--op,.7); transform:scale(1.4); }
 }
 
-/* ── ESCENA ── */
 .scene {
    display: flex;
   align-items: flex-end;
@@ -36,28 +35,24 @@
   transform-origin: center bottom;
 }
 
-/* 📱 Celulares */
 @media (max-width: 600px) {
   .scene {
     transform: scale(0.7);
   }
 }
 
-/* 📲 Tablets */
 @media (max-width: 900px) {
   .scene {
     transform: scale(0.85);
   }
 }
 
-/* 🖥️ Pantallas grandes */
 @media (min-width: 1400px) {
   .scene {
     transform: scale(1.2);
   }
 }
 
-/* TEXTO */
 .mensaje {
   margin-top: 40px;
   font-size: 24px;
@@ -76,7 +71,6 @@
 }
 
 
-/* ══════════════ ROSA ══════════════ */
 .container { position:relative; }
 
 .glass {
@@ -179,7 +173,6 @@
   bottom:-18px; left:-10px; border-radius:50%;
 }
 
-/* ══════════════ LIBRO ══════════════ */
 .book-wrap {
   position: relative;
   animation: bookFloat 4s 1s ease-in-out infinite;
@@ -202,7 +195,6 @@
   to  { opacity:1; transform:translateY(0) rotate(0deg); }
 }
 
-/* Tapa trasera */
 .book-back {
   position:absolute; bottom:0; left:6px;
   width:122px; height:168px;
@@ -211,7 +203,6 @@
   border:1px solid rgba(120,60,180,0.3);
 }
 
-/* Lomo */
 .book-spine {
   position:absolute; bottom:0; left:0;
   width:14px; height:170px;
@@ -221,7 +212,7 @@
   box-shadow: inset -2px 0 6px rgba(0,0,0,0.5), 0 0 14px rgba(150,80,220,0.25);
   z-index:3;
 }
-/* líneas decorativas en el lomo */
+
 .book-spine:before {
   content:'';
   position:absolute; top:22px; left:2px;
@@ -230,7 +221,7 @@
   box-shadow: 0 8px 0 rgba(200,150,255,0.3), 0 116px 0 rgba(200,150,255,0.3), 0 124px 0 rgba(200,150,255,0.4);
 }
 
-/* Tapa delantera */
+
 .book-cover {
   position:absolute; bottom:0; left:6px;
   width:122px; height:170px;
@@ -244,7 +235,7 @@
   z-index:2;
 }
 
-/* Marco dorado en la tapa */
+
 .book-frame {
   position:absolute; inset:8px;
   border:1px solid rgba(200,160,80,0.35);
@@ -257,7 +248,7 @@
   border-radius:2px;
 }
 
-/* Rosa en la tapa del libro */
+
 .book-rose-icon {
   position:absolute; top:50%; left:50%;
   transform:translate(-50%,-54%);
@@ -265,7 +256,6 @@
 }
 .book-rose-icon svg { width:100%; height:100%; }
 
-/* Líneas de texto decorativas */
 .book-lines {
   position:absolute; bottom:22px; left:14px; right:14px;
 }
@@ -281,7 +271,6 @@
   50%{ background:rgba(200,160,80,0.5); box-shadow:0 0 6px rgba(200,160,80,0.3); }
 }
 
-/* Brillo tapa */
 .book-shine {
   position:absolute; top:10px; right:14px;
   width:5px; height:80px;
@@ -289,7 +278,6 @@
   border-radius:3px;
 }
 
-/* Páginas (canto) */
 .book-pages {
   position:absolute; bottom:4px; right:-6px;
   width:10px; height:162px;
@@ -303,7 +291,7 @@
   z-index:1;
 }
 
-/* Partículas del libro */
+
 .book-particles { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
 .book-particle {
   position:absolute; border-radius:50%;
@@ -315,7 +303,7 @@
   100%{ opacity:0;  transform:translate(var(--bx,5px),var(--by,-30px)) scale(0.2); }
 }
 
-/* Base del libro */
+
 .book-base {
   width:140px; height:12px;
   background:linear-gradient(90deg,#7a1e1e,#a52a2a,#7a1e1e);
@@ -330,7 +318,6 @@
   margin-top:4px;
 }
 
-/* Halo del libro */
 .book-halo {
   position:absolute; top:-20px; left:-10px;
   width:150px; height:150px; border-radius:50%;
@@ -343,7 +330,6 @@
   50%    { opacity:1;  transform:scale(1.1); }
 }
 
-/* ══════════════ ANIMACIONES ROSA ══════════════ */
 @keyframes bloom2 {
   50% { transform:rotate(-90deg); top:200px; left:100px; }
   100%{ transform:rotate(-60deg); top:252px; left:50px; background:#71122a; box-shadow:0 0 0 rgba(245,148,184,0); }
@@ -367,10 +353,10 @@
 <div class="wrap" id="wrap">
   <div class="stars" id="stars"></div>
 
-  <!-- CORREGIDO AQUÍ -->
+ 
   <div class="scene">
 
-    <!-- ── ROSA ── -->
+    
     <div class="container">
       <div class="shadow-rose"></div>
       <div class="glass">
@@ -385,7 +371,7 @@
       <div class="deadPetals"><div></div><div></div><div></div><div></div></div>
     </div>
 
-    <!-- ── LIBRO ── -->
+   
     <div class="book-wrap">
       <div class="book-halo"></div>
       <div class="book">
@@ -422,7 +408,7 @@
 
   </div>
 
-  <!-- TEXTO (FUERA de .scene para que quede abajo centrado) -->
+  
   <div class="mensaje">
     Feliz día del Libro. Aremy
   </div>
@@ -430,7 +416,7 @@
 </div>
 
 <script>
-  /* Estrellas */
+  
   const starsEl = document.getElementById('stars');
   for(let i=0;i<80;i++){
     const s=document.createElement('div');
@@ -440,7 +426,7 @@
     starsEl.appendChild(s);
   }
 
-  /* Partículas rosa */
+  
   const pEl=document.getElementById('particles');
   const colors=['#ffd700','#ffb347','#ff9eb5','#ffe4e1','#fff0a0'];
   for(let i=0;i<18;i++){
@@ -451,7 +437,7 @@
     pEl.appendChild(p);
   }
 
-  /* Partículas libro */
+  
   const bpEl=document.getElementById('bookParticles');
   const bookColors=['#c896ff','#e0b0ff','#ffd700','#b060ff','#ffe4ff'];
   for(let i=0;i<12;i++){
